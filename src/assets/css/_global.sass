@@ -1,23 +1,30 @@
+@import "variables"
+@import "breakpoints"
+
+// ===============================================
+// Layout / Style
+// ===============================================
+
+.ng-cloak
+  display: none !important
+
 .container
+  // display: flex
+  // align-items: stretch
+  // align-content: stretch
+
   position: relative
   height: 100%
   width: 100%
 
+  // +tablet
+  //   flex-flow: column nowrap
+
+  // +desktop
+  //   flex-flow: row nowrap
+
 .right-container
-  position: absolute
-  display: block
-  top: 0
-  right: 0
-  height: 100%
-  width: calc(100% - 160px)
-  padding-left: 40px
-  margin: 0px
   
-  overflow: hidden
-
-body
-  background-color: #333333
-
 a,
 ::visited,
 ::hover,

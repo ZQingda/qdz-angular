@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { GalleryComponent } from './containers/gallery/gallery.component';
 import { MainComponent } from './containers/main/main.component';
 import { ProjectsComponent } from './containers/projects/projects.component';
+import { SidemenuComponent } from './components/sidemenu/sidemenu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GalleryComponent,
     MainComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    SidemenuComponent
   ],
   imports: [
     BrowserModule,
