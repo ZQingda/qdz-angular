@@ -6,12 +6,12 @@
     <div class="title-menu">
       <button (click)="filterCategory('all')">all</button> / 
       <button (click)="filterCategory('personal')">personal</button> / 
-      <button (click)="filterCategory('hackathon')">hackathon</button> / 
-      <button (click)="filterCategory('academic')">academic</button>
+      <button (click)="filterCategory('hackathon')">hackathon</button>
+      <!-- <button (click)="filterCategory('academic')">academic</button> -->
     </div>
   </div>
   <section class="project-container" *ngFor="let project of state.selectedProjects">
-    <a href="project.link">
+    <a href="{{ project.link }}" target="_blank">
       <div class="project-image">
         <img class="project-image-actual" src="{{ '../../../' + project.imageLink }}">
       </div>
