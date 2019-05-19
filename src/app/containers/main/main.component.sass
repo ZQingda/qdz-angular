@@ -37,33 +37,30 @@ $super-light-grey-border: 2px solid $super-light-grey
 //   width: calc(100% - #{$sidebar-width})
 
 .right-container
-  //height: 100%
-  background-color: $content-bg
-  display: flex
-  flex-direction: column
-  // justify-content: center
-  // align-items: center
-  
   +tablet
-    width: 100%
-    margin: $sidebar-height 0 0 0
-
+    align-items: center
   +desktop
-    width: calc(100% - #{$sidebar-width})
-    margin: 0 0 0 $sidebar-width
+    height: 100%
+    align-items: flex-start
+    justify-content: center
 
 .page-header
   margin: 30px 0 0 30px
 
 .content-card
-  margin: 50px
-
-  width: calc(100% - 100px)
   max-width: 744px
   background-color: $content-bg
 
   //border: $super-light-grey-border
   //box-shadow: -3px 3px 40px -28px rgba(189,189,189,1);
+
+  +mobile
+    margin: 0
+    width: 100%
+
+  +tablet
+    margin: 50px
+    width: calc(100% - 100px)
 
 .content
   width: 100%
@@ -74,14 +71,24 @@ $super-light-grey-border: 2px solid $super-light-grey
 
 .content-header
   width: 100%
-  height: $top-row-height
   padding: 20px
   display: flex
 
   border-bottom: $super-light-grey-border
 
+  +mobile
+    padding: 20px 0
+    flex-flow: column nowrap
+    align-items: center
+  
+  +tablet 
+    height: $top-row-height
+
 .profile-image
   margin-right: 30px
+
+  +mobile
+    margin: 0
 
   .profile-image-border
     height: calc(#{$top-row-height} - 40px)
@@ -99,7 +106,14 @@ $super-light-grey-border: 2px solid $super-light-grey
 .content-title
   display: flex
   align-items: center
-  height: calc(#{$top-row-height} - 40px)
+
+  +mobile
+    margin-top: 20px
+    h2
+      text-align: center
+
+  +tablet
+    height: calc(#{$top-row-height} - 40px)
 
 .content-text
   padding: 20px

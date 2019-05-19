@@ -5,6 +5,14 @@
 // Local variables
 // ===============================================
 
+=column
+  @media (max-width: 700px)
+    @content
+
+=row
+  @media (min-width: 701px)
+    @content
+
 $project-header-height: 50px
 $project-text-height: 150px
 $super-light-grey-border: 1px solid $lighterer-grey
@@ -77,29 +85,13 @@ $lighterer-grey-border: 1px solid $lighterer-grey
 // \:host
 //   width: calc(100% - #{$sidebar-width})
 
-.right-container
-  //height: 100%
-  background-color: $content-bg
-  display: flex
-  flex-direction: column
-  // justify-content: center
-  // align-items: center
-  
-  +tablet
-    width: 100%
-    margin: $sidebar-height 0 0 0
-
-  +desktop
-    width: calc(100% - #{$sidebar-width})
-    margin: 0 0 0 $sidebar-width
-
-
-
-
 .title-container
   width: 100%
 
   padding: 50px
+
+  +mobile
+    padding: 20px
 
   .title-header
     display: flex
@@ -127,6 +119,8 @@ $lighterer-grey-border: 1px solid $lighterer-grey
 
   a
     display: flex
+    +column
+      flex-flow: column nowrap
 
   &:hover
     background-position: 1%
@@ -141,23 +135,53 @@ $lighterer-grey-border: 1px solid $lighterer-grey
   display: flex
   justify-content: space-between
   align-items: center
-  height: $project-header-height
+  
+  
+  +column
+    flex-flow: column nowrap
+    align-items: flex-start
 
-  padding: 10px 40px
+    padding: 0 30px 10px 30px
+
+    .project-title
+      margin-bottom: 10px
+  +mobile
+    padding: 0 20px 10px 20px
+
+  +row
+    height: $project-header-height
+    padding: 10px 40px
+
 
 .project-caption
-  padding: 0 40px 10px 40px
+  +column
+    padding: 0 30px 10px 30px
+  +row
+    padding: 0 40px 10px 40px
+  +mobile
+    padding: 0 20px 10px 20px
 
 .project-text
-  padding: 0 40px 20px 40px
+  +column
+    padding: 0 30px 30px 30px
+  +row
+    padding: 0 40px 10px 40px
+  +mobile
+    padding: 0 20px 20px 20px
 
 .project-image
-  flex: 0 1 300px
-  height: 200px
-  width: 300px
 
   padding: 10px
   //border: $super-light-grey-border
+  
+  +column
+    padding: 20px 80px
+  +row
+    flex: 0 1 300px
+    height: 200px
+    width: 300px
+  +mobile
+    padding: 30px
 
   .project-image-actual
     height: 100%

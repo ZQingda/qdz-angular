@@ -24,6 +24,24 @@
   //   flex-flow: row nowrap
 
 .right-container
+  //height: 100%
+  background-color: $content-bg
+  display: flex
+  flex-direction: column
+  // justify-content: center
+  // align-items: center
+
+  +mobile
+    width: 100%
+    margin: $sidebar-mobile-height 0 0 0
+  
+  +tablet
+    width: 100%
+    margin: $sidebar-height 0 0 0
+
+  +desktop
+    width: calc(100% - #{$sidebar-width})
+    margin: 0 0 0 $sidebar-width
   
 a,
 ::visited,

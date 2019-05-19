@@ -9,6 +9,12 @@ export class LightboxComponent implements OnInit {
 
   @Input() album: any = []
 
+  selected: any = {
+    image: {},
+    index: 0,
+    count: 0
+  }
+
   constructor() { }
 
   ngOnInit() {

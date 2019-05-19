@@ -1,17 +1,18 @@
-<div class="sidebar" id="menu-sidebar">
+<div class="sidebar">
   <main class="sidebar-content">
     <div class="sidebar-header"><h2>Qingda Zou</h2></div>
-    <nav class="site-nav">
+    <nav class="site-nav" [ngClass]="{'is-displayed' : this.state.isDisplayed, 'is-visible' : this.state.isVisible}">
       <ul>
         <li routerLinkActive="nav-active" [routerLinkActiveOptions]="{exact:
-          true}" class="about-link"><a class="nav-link" routerLink="/">about</a></li>
-        <li routerLinkActive="nav-active" class="code-link"><a class="nav-link" routerLink="/projects">projects</a></li>
-        <li routerLinkActive="nav-active" class="photography-link"><a class="nav-link" routerLink="/photography">photo</a></li>
+          true}" (click)="hide()" class="about-link"><a class="nav-link" routerLink="/">about</a></li>
+        <li routerLinkActive="nav-active" (click)="hide()" class="code-link"><a class="nav-link" routerLink="/projects">projects</a></li>
+        <li routerLinkActive="nav-active" (click)="hide()" class="photography-link"><a class="nav-link" routerLink="/photography">photo</a></li>
       </ul>
     </nav>
-    <div class="iconbar">
+    <div class="iconbar" [ngClass]="{'is-displayed' : this.state.isDisplayed, 'is-visible' : this.state.isVisible}">
       <a class="icon-link" href="https://github.com/ZQingda" target="_blank"><i class="icon icon-github"></i></a>
       <a class="icon-link" href="https://www.linkedin.com/in/zqingda/" target="_blank"><i class="icon icon-linkedin"></i></a>        <a class="icon-link" href="mailto:qingda.zou@gmail.com" target="_blank"><i class="icon icon-email"></i></a>
     </div>
+    <button class="hamburger icon-link" (click)="toggleHamburger()"><i class="icon" [ngClass]="{'icon-hamburger' : !state.isDisplayed, 'icon-close' : state.isDisplayed }"></i></button>
   </main>
 </div>

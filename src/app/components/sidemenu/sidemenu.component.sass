@@ -41,6 +41,8 @@ $iconbar-height: 48px
   & > ul 
     & > li
       text-align: center
+      +mobile
+        line-height: $nav-link-height
       +tablet
         line-height: $sidebar-height
       +desktop
@@ -93,6 +95,12 @@ $iconbar-height: 48px
 .icon-email 
   &:before 
     content: "\f0e0"
+.icon-hamburger
+  &:before
+    content: "\f0c9"
+.icon-close
+  &:before
+    content: "\f00d"
 
 // ===============================================
 // Layout / Style
@@ -116,6 +124,13 @@ $iconbar-height: 48px
 
   z-index: $max-zindex
   background-color: white
+  
+  box-shadow: 0px 0px 30px -25px #E8E8E8;
+
+  +mobile
+    box-shadow: 0px 0px 30px -25px #E8E8E8;
+    height: $sidebar-mobile-height
+    width: 100%
 
   +tablet
     height: $sidebar-height
@@ -127,19 +142,31 @@ $iconbar-height: 48px
 
 .sidebar-content
   display: flex
-  flex-flow: column wrap
-  align-items: center
-  justify-content: center
 
   position: relative
   width: 100%
   height: 100%
 
-.sidebar-header
-  height: $header-height
-  display: flex
+  +mobile
+    flex-flow: row nowrap
+    justify-content: space-between
 
   +tablet
+    align-items: center
+    justify-content: center
+    flex-flow: column wrap
+
+.sidebar-header
+  display: flex
+
+  +mobile
+    width: 150px
+    height: $sidebar-mobile-height
+    align-items: center
+    justify-content: center
+
+  +tablet
+    height: $header-height
     align-items: flex-end
     h2
       padding-bottom: 10px
@@ -155,6 +182,11 @@ $iconbar-height: 48px
 
   & > ul 
     display: flex
+    +mobile
+      flex-flow: column nowrap
+      justify-content: flex-end
+      height: 100%
+      padding-bottom: 50px
     +tablet
       justify-content: flex-end
 
@@ -162,6 +194,8 @@ $iconbar-height: 48px
       flex-direction: column
 
     & > li 
+      +mobile
+        height: $nav-link-height
       +tablet
         height: 100%
       +desktop
@@ -169,6 +203,21 @@ $iconbar-height: 48px
         width: 100% 
       & > a 
         padding: 10px 30px
+
+  +mobile
+    position: fixed
+    display: none
+    opacity: 0
+    height: 55vh
+    width: 100%
+    top: $sidebar-mobile-height
+
+    background-color: white
+
+    &.is-displayed
+      display: initial
+    &.is-visible
+      opacity: 1
   
   +tablet
     order: 2
@@ -188,6 +237,20 @@ $iconbar-height: 48px
   justify-content: center
 
   height: $iconbar-height
+
+  +mobile
+    position: fixed
+    display: none
+    opacity: 0
+    height: calc(45vh - #{$sidebar-mobile-height})
+    width: 100%
+    top: calc(55vh + #{$sidebar-mobile-height})
+
+    background-color: white
+    &.is-displayed
+      display: flex
+    &.is-visible
+      opacity: 1
 
   +tablet
     order: 1
@@ -210,3 +273,12 @@ $iconbar-height: 48px
     padding: 0
 
 
+.hamburger
+  width: $sidebar-mobile-height
+  height: $sidebar-mobile-height
+
+  +mobile
+    display: initial
+  
+  +tablet
+    display: none

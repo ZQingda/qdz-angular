@@ -2,7 +2,10 @@
   <main class="carousel">
     <div *ngFor="let image of album.images; let i = index; let len = count" class="image-container">
       <img class="image" src="{{ '../../../' + image.src }}" alt="{{ image.alt }}">
-      <!-- <p class="caption">{{ image.caption }}</p> -->
+      <p class="caption">{{ i+1 + ' / ' + len }}</p>
     </div>
   </main>
+  <section class="lightbox">
+    
+  </section>
 </div>

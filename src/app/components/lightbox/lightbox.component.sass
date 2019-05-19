@@ -9,10 +9,22 @@ $super-light-grey-border: 1px solid $lighterer-grey
 $lighterer-grey-border: 1px solid $lighterer-grey
 
 $image-space-around: 40px // 80px between each image
+$image-space-around-mobile: 20px // 40px between each image
 
 // ===============================================
 // Typography
 // ===============================================
+
+.image
+  font-family: 'Nunito', sans-serif
+  font-weight: 300
+  color: $text-dark
+
+.caption
+  font-family: 'Nunito', sans-serif
+  font-weight: 300
+  font-size: 0.8rem
+  color: $text-light
 
 // ===============================================
 // Layout / Style
@@ -24,6 +36,9 @@ $image-space-around: 40px // 80px between each image
 
   max-width: 700px
 
+  +mobile
+    margin: 0 0 40px 0
+
 .carousel
   display: flex
   flex-flow: row wrap
@@ -33,10 +48,30 @@ $image-space-around: 40px // 80px between each image
 
 .image-container
   display: flex
+  flex-direction: column
   align-items: center
+  justify-content: center
 
   flex: 0 1 350px
 
   .image
-    width: calc(100% - 2*#{$image-space-around})
-    margin: $image-space-around
+    +mobile
+      width: calc(100% - 2*#{$image-space-around-mobile})
+      margin: 10px $image-space-around-mobile
+    +tablet
+      width: calc(100% - 2*#{$image-space-around})
+      margin: 5px $image-space-around
+    
+    &:hover
+      cursor: pointer
+    
+  .caption
+    display: inline-block
+    width: 100%
+    margin: 10px 0 25px 0
+    text-align: right
+
+    +mobile
+      padding: 0 $image-space-around-mobile
+    +tablet
+      padding: 0 $image-space-around
