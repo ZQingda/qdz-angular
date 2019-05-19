@@ -1,5 +1,6 @@
 *, ::before, ::after
   box-sizing: border-box
+  transition: all ease-in-out 150ms, background-position ease-in-out 150ms
 
 body, html, div, nav, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol, li, dl, dt, dd, form, a, fieldset, input, th, td
   margin: 0
@@ -28,4 +29,28 @@ ul, ol
 
 img
   border: 0
+
+// Button reset
+
+button 
+  display: inline-block
+  border: none
+  padding: 0px
+  text-decoration: none
+  font-family: serif
+  font-size: 1rem
+  cursor: pointer
+  text-align: center
+  transition: color 150ms ease-in-out, font-weight 150ms ease-in-out, background 150ms ease-in-out, transform 150ms ease
+  -webkit-appearance: none
+  -moz-appearance: none
+  background: none
+
+
+// button:hover
+//   background: #eeeeee
+
+// button:active 
+//   transform: scale(0.99)
+
   

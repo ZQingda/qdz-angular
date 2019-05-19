@@ -7,6 +7,7 @@ import { GalleryComponent } from './containers/gallery/gallery.component';
 import { MainComponent } from './containers/main/main.component';
 import { ProjectsComponent } from './containers/projects/projects.component';
 import { SidemenuComponent } from './components/sidemenu/sidemenu.component';
+import { LightboxComponent } from './components/lightbox/lightbox.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SidemenuComponent } from './components/sidemenu/sidemenu.component';
     GalleryComponent,
     MainComponent,
     ProjectsComponent,
-    SidemenuComponent
+    SidemenuComponent,
+    LightboxComponent
   ],
   imports: [
     BrowserModule,
