@@ -26,6 +26,25 @@ $image-space-around-mobile: 20px // 40px between each image
   font-size: 0.8rem
   color: $text-light
 
+.icon-button
+  color: $text-lighter
+.icon-button:hover
+  color: $text-dark
+
+.icon-button
+  font-size: 1.2rem
+  text-align: center
+
+.image-info
+  font-family: 'IBM Plex Sans', sans-serif
+  font-size: 1rem
+  font-weight: 200
+  color: $text-light
+  .name
+    font-weight: 300
+  .count
+    font-size: 0.8rem
+
 // ===============================================
 // Layout / Style
 // ===============================================
@@ -75,3 +94,47 @@ $image-space-around-mobile: 20px // 40px between each image
       padding: 0 $image-space-around-mobile
     +tablet
       padding: 0 $image-space-around
+
+.lightbox
+  position: fixed
+  top: 0
+  left: 0
+  visibility: collapse
+  width: 100vw
+  height: 100vh
+  
+  z-index: $lightbox-zindex
+  opacity: 0
+  background-color: white
+  transition: opacity 80ms ease-in-out
+
+  &.is-displayed
+    visibility: visible
+  &.is-visible
+    opacity: 1
+
+  img
+    height: calc(100% - 100px)
+    width: 100%
+    margin-top: 50px
+    object-fit: contain
+    object-position: 50% 50%
+  
+  .close
+    position: absolute
+    top: 0
+    right: 0
+    height: 50px
+    width: 50px
+
+  .image-info
+    display: flex
+    align-items: center
+    height: 50px
+
+    position: absolute
+    bottom: 0
+    left: 30px
+
+    p
+      padding: 0 25px 0 5px

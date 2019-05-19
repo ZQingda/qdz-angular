@@ -19,7 +19,7 @@ export class SidemenuComponent implements OnInit {
 
   show() {
     this.state.isDisplayed = true;
-    setTimeout(() => this.state.isVisible = true, 150);
+    this.state.isVisible = true;
   }
 
   hide() {

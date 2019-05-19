@@ -1,11 +1,15 @@
 <div class="lightbox-container">
   <main class="carousel">
     <div *ngFor="let image of album.images; let i = index; let len = count" class="image-container">
-      <img class="image" src="{{ '../../../' + image.src }}" alt="{{ image.alt }}">
-      <p class="caption">{{ i+1 + ' / ' + len }}</p>
+      <img (click)="selectImage(i)"class="image" src="{{ '../../../' + image.src }}" alt="{{ image.alt }}">
+      <p class="caption">{{ (i + 1) + ' / ' + len }}</p>
     </div>
   </main>
-  <section class="lightbox">
-    
+  <section [ngClass]="{'is-displayed' : lightbox.isDisplayed, 'is-visible' : lightbox.isVisible}" class="lightbox">
+    <img src="{{ '../../../' + lightbox.image.src }}" alt="{{ lightbox.image.alt }}">
+    <div class="image-info">
+      <span class="name">{{ album.name }}</span><p>{{ '| ' + album.date }}</p><span class="count">{{ (lightbox.index + 1) + ' / ' + lightbox.count }}</span>
+    </div>
+    <button (click)="hide()" class="close icon-button"><i class="icon icon-close"></i></button>
   </section>
 </div>

@@ -2,6 +2,34 @@
 @import "breakpoints"
 
 // ===============================================
+// Icons
+// ===============================================
+
+.icon 
+  font: normal normal normal 14px/1 FontAwesome 
+  font-size: inherit 
+  text-decoration: none 
+  text-rendering: auto 
+  -webkit-font-smoothing: antialiased 
+  -moz-osx-font-smoothing: grayscale 
+
+.icon-github 
+  &:before 
+    content: "\f09b"
+.icon-linkedin 
+  &:before 
+    content: "\f08c" 
+.icon-email 
+  &:before 
+    content: "\f0e0"
+.icon-hamburger
+  &:before
+    content: "\f0c9"
+.icon-close
+  &:before
+    content: "\f00d"
+
+// ===============================================
 // Layout / Style
 // ===============================================
 
@@ -16,6 +44,7 @@
   position: relative
   height: 100%
   width: 100%
+  overflow: hidden
 
   // +tablet
   //   flex-flow: column nowrap
@@ -24,24 +53,28 @@
   //   flex-flow: row nowrap
 
 .right-container
-  //height: 100%
-  background-color: $content-bg
+  height: 100%
   display: flex
   flex-direction: column
+
+  background-color: $content-bg
+
+  overflow-y: scroll
+
   // justify-content: center
   // align-items: center
 
   +mobile
     width: 100%
-    margin: $sidebar-mobile-height 0 0 0
+    padding: $sidebar-mobile-height 0 0 0
   
   +tablet
     width: 100%
-    margin: $sidebar-height 0 0 0
+    padding: $sidebar-height 0 0 0
 
   +desktop
-    width: calc(100% - #{$sidebar-width})
-    margin: 0 0 0 $sidebar-width
+    width: 100%
+    padding: 0 0 0 $sidebar-width
   
 a,
 ::visited,
